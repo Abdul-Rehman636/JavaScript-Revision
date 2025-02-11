@@ -504,3 +504,278 @@ function checkFunction() {
 
 // greet(); Output: Hello, world!
 // sayHello(); // Error: sayHello is not defined outside the function expression.
+
+//Day 4 :-
+
+//An array is a collection of elements (values) stored in a single variable. Arrays in JavaScript are dynamic, meaning they can grow or shrink in size, and they can hold any data type (numbers, strings, objects, even other arrays).
+
+function checkArray() {
+  var array = ["One", "Two", "Three"];
+
+  document.write(array);
+
+  let mixedArray = [1, "hello", true, { name: "John" }];
+
+  document.write(mixedArray, mixedArray[3].name);
+}
+
+//Array methods :-
+
+//Basic Array Methods :-
+
+//1) Push() (Adds one or more elements to the end of an array) :-
+
+function pushMethod() {
+  var letters = ["a", "b", "c"];
+  // Now i want to add another element in this array so i will use push() method to push elements in it.
+
+  letters.push("d", "e", "f");
+
+  document.write(letters);
+}
+
+// 2) Pop() (Remove an element from the end of an array) :-
+
+function popMethod() {
+  var letters = ["a", "b", "c"];
+  // Now i want to remove an element in this array so i will use pop() method to remove an element in it.
+
+  letters.pop();
+
+  document.write(letters);
+}
+
+// 3) Shift() (Removes an element from the start of an array) :-
+
+function shiftMethod() {
+  var letters = ["a", "b", "c"];
+  //Now i want to remove an element from the start in this array so i will use shift() method in it.
+
+  letters.shift();
+
+  document.write(letters);
+}
+
+// 4) Unshift() (Add one more elements to the beginning of an array) :-
+
+function unShiftMethod() {
+  var letters = ["a", "b", "c"];
+  //Now i want to add one or more elements to the beginning of an array so i will use unshiftMehod() in it.
+
+  letters.unshift("0", "1", "2");
+
+  document.write(letters);
+}
+
+// 5) Length() (Used to check the lenght of an array) :-
+
+function length() {
+  var letters = ["a", "b", "c"];
+
+  //Now i want to check the length of this array.
+
+  document.write(letters.length);
+}
+
+//Iteration Array Methods :-
+
+//6) forEach() Method (Executes a function for each element in the array) :-
+
+function forEach() {
+  var letters = ["a", "b", "c"];
+  //Now i want to show these element one by one means i want that function should be executed for each element.
+
+  letters.forEach((letter, index) =>
+    document.write(`${index + 1}`, " : ", letter.toUpperCase(), "<br>")
+  );
+}
+
+//7) map() Method (Creates a new array by applying a function to each element) :-
+
+function map() {
+  var names = ["Alex", "John", "Charlie"];
+
+  names.map((name, index) =>
+    document.write(`Hello ${name} from index ${index + 1}, <br>`)
+  );
+}
+
+//8) filter() Method (Creates a new array with elements that pass a test) :-
+
+function filter() {
+  var numbers = [4, 2, 9, 0, 5, 7];
+
+  let final = numbers.filter((number) => number >= 5);
+
+  document.write(final);
+}
+
+//9) reduce() Method (Reduce the array to a single value by applying a function) :-
+
+function reduce() {
+  let numbers = [1, 2, 3, 4];
+  let sum = numbers.reduce((acc, num) => acc + num);
+  document.write(sum);
+}
+
+//10) find() Method (Returns the first element that satisfies a condition) :-
+
+function find() {
+  let fruits = ["apple", "mango", "banana", "grapes"];
+
+  let foundFruits = fruits.find((fruit) => fruit === "banana");
+
+  document.write(foundFruits);
+}
+
+//11) some() Method (Checks if at least one element satisfies a condition) :-
+
+function some() {
+  let fruits = ["apple", "mango", "banana", "grapes"];
+
+  let someFruit = fruits.some((fruit) => fruit.length > 3);
+
+  document.write(someFruit);
+}
+
+//12) every() Method (Checks if all elements satisfy a condition) :-
+
+function every() {
+  let fruits = ["apple", "mango", "banana", "grapes"];
+
+  fruits.every((fruit) => (fruit.length >= 5 ? document.write(fruits) : ""));
+
+  // document.write(everyFruit);
+}
+
+//Manipulation Array Methods :-
+
+//13) slice() Method (Returns a shallow copy of a portion of an array) :-
+
+//It works according to the indexes.
+
+function slice() {
+  let fruits = ["apple", "mango", "banana", "grapes"];
+
+  let specificElements = fruits.slice(1, 3);
+
+  document.write(specificElements);
+}
+
+//14) splice() Method (Adds or removes elements from an array at a specific index) :-
+
+function splice() {
+  let fruits = ["apple", "mango", "banana", "grapes"];
+
+  fruits.splice(1, 0, "kiwi");
+
+  document.write(fruits);
+}
+
+//15) concat() Method (Combines two or more arrays) :-
+
+function concat() {
+  let fruits = ["apple", "mango", "banana", "grapes"];
+
+  let moreFruits = ["orange", "strawberry"];
+
+  let moreFruits2 = ["orange", "straw"];
+
+  let addedFruits = fruits.concat([moreFruits, moreFruits2]);
+
+  document.write(addedFruits);
+}
+
+//16) join() Method (Joins all elements of an array into a string) :-
+
+// Does join() Work Only for Strings?
+// => No, the join() method works for arrays of any data type, not just strings. It converts each element to a string before joining them.
+
+function join() {
+  let fruits = ["apple", "mango", "banana", "grapes"];
+
+  let fruitString = fruits.join(", ");
+
+  document.write(fruitString, "<br>");
+
+  document.write(typeof fruitString);
+}
+
+//17) reverse() Method (Reverses the order of elements in an array) :-
+
+function reverse() {
+  let fruits = ["apple", "mango", "banana", "grapes"];
+
+  fruits.reverse();
+
+  document.write(fruits);
+}
+
+//18) sort() Method (Sorts the elements of an array) :-
+
+//There are two methods of sort() which are Ascending and Descending order it works like this :-
+
+//1) Ascending Order :-
+
+// function sort() {
+//   let fruits = ["apple", "mango", "banana", "grapes"];
+
+//   fruits.sort();
+
+//   document.write(fruits);
+// }
+
+//2) Descending Order :-
+
+function sort() {
+  let fruits = ["apple", "mango", "banana", "grapes"];
+
+  fruits.sort((a, b) => b.localeCompare(a));
+
+  document.write(fruits);
+}
+
+//Search Array Methods :-
+
+//19) indexOf() Method (Returns the first index of a given element) :-
+
+function indexOf() {
+  let fruits = ["apple", "mango", "banana", "grapes"];
+
+  let index = fruits.indexOf("banana");
+
+  document.write(fruits, "<br>");
+
+  document.write(`Index of ${fruits[index]} is : `, index);
+}
+
+//20) includes() Method (Checks if an array contains a specific element) :-
+
+function includes() {
+  let fruits = ["apple", "mango", "banana", "grapes"];
+
+  let hasApple = fruits.includes("banana"); // Gives answer in True or False
+
+  document.write(fruits, "<br>");
+
+  document.write(hasApple);
+}
+
+//Iterations Method (One more) :-
+
+//21) spread() Method (The spread operator is represented by three dots (...). It "unpacks" the elements of an iterable (e.g., an array or string) into individual elements) :-
+
+// What Are Individual Elements?
+// => Individual elements are the distinct items contained within a collection (like an array or string). For example:
+
+// In an array, each item is an individual element.
+
+// In a string, each character is an individual element.
+
+// In an object, each key-value pair is treated as an individual element when using the spread operator.
+
+function spread() {
+  let fruits = ["apple", "mango", "banana", "grapes"];
+
+  document.write(...fruits.join(" "));
+}
