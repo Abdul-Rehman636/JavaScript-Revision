@@ -779,3 +779,227 @@ function spread() {
 
   document.write(...fruits.join(" "));
 }
+
+//Day 5 :-
+
+//Object :-
+
+//An object in JavaScript is a collection of key-value pairs, where each key (also called a property) maps to a value. Objects are used to store and organize data in a structured way.
+
+//Part 2:-
+
+// There are two ways to access values of objects :-
+
+// 1) Dot Notation (student.name).
+
+// 2) Bracket Notation (student["subject"]).
+
+function checkObject() {
+  let student = {
+    name: "Alex",
+    subject: "Engineering",
+    grade: "A+",
+  };
+
+  document.write(
+    `Your name is ${student.name} <br> you study in ${student.subject} <br> you got ${student["grade"]} grade.`
+  );
+}
+
+//Part 3:-
+
+//We can also add new properties in object and can modify the existing one.
+
+//Addding :-
+
+function addedObject() {
+  let student = {
+    name: "Alex",
+    subject: "Engineering",
+    grade: "A+",
+  };
+
+  student.city = "New York";
+
+  document.write(
+    `Your name is ${student.name} <br> you are from ${student.city} <br> you study in ${student.subject} <br> you got ${student["grade"]} grade.`
+  );
+}
+
+//Modifying :-
+
+function modifiedObject() {
+  let student = {
+    name: "Alex",
+    subject: "Engineering",
+    grade: "A+",
+  };
+
+  student.subject = "Science";
+
+  document.write(
+    `Your name is ${student.name} <br> you are from ${student.city} <br> you study in ${student.subject} <br> you got ${student["grade"]} grade.`
+  );
+}
+
+//Part 4:-
+
+//Object Methods :-
+
+//Methods are functions that are stored as object properties. They allow objects to perform actions.
+
+function objectMethod() {
+  let student = {
+    name: "Alex",
+    subject: "Engineering",
+    grade: "A+",
+    welcome: function () {
+      document.write(`Hello my name is ${this.name}`);
+    },
+  };
+
+  student.welcome();
+}
+
+//Part 5:-
+
+//The this Keyword :-
+
+//The this keyword refers to the current object in which the method is being called. It allows you to access the object’s properties and methods from within the method.
+
+function thisKeyword() {
+  let car = {
+    brand: "Toyota",
+    speed: 0,
+    accelerate: function () {
+      this.speed += 10;
+      document.write(`The ${this.brand} is now going at ${this.speed} km/h.`);
+    },
+  };
+
+  car.accelerate();
+}
+
+//Part 6:-
+
+//Nested Objects :-
+
+//Objects can contain other objects as properties.
+
+function nestedObjects() {
+  let student = {
+    name: "Alice",
+    age: 25,
+    address: {
+      city: "New York",
+      zipCode: "10001",
+    },
+  };
+
+  document.write(
+    `Hey, Your name is ${student.name} and your age is ${student.age} years old <br> You belong from ${student.address.city} which zip code is ${student.address.zipCode}. <br> <b>Thank You!</b>`
+  );
+}
+
+//Part 7:-
+
+//Object Methods and this in Depth.
+
+// Let’s dive deeper into object methods and the this keyword.
+
+// a) Method Shorthand
+
+// In modern JavaScript, you can define methods using a shorthand syntax.
+
+function shorthand() {
+  let person = {
+    name: "Alice",
+    greet() {
+      document.write(`Hello, my name is ${this.name}!`);
+    },
+  };
+
+  person.greet();
+}
+
+// b) this in Arrow Functions
+
+// Arrow functions do not have their own this. Instead, they inherit this from the surrounding (lexical) context.
+
+// function thisArrow() {
+//   let person = {
+//     name: "Alice",
+//     greet: () => {
+//       document.write(`Hello, my name is ${this.name}!`); // `this` is not bound to the object
+//     },
+//   };
+
+//   person.greet(); // Output: Hello, my name is undefined!
+// }
+
+// To fix this, use a regular function:
+
+function thisArrow() {
+  let person = {
+    name: "Alice",
+    greet() {
+      document.write(`Hello, my name is ${this.name}!`);
+    },
+  };
+
+  person.greet();
+}
+
+// Part 8:-
+
+//Common Object Methods.
+
+// JavaScript provides built-in methods for working with objects.
+
+// a) Object.keys()
+
+// Returns an array of an object’s keys.
+
+function objectKeys() {
+  let person = { name: "Alice", age: 25 };
+  document.write(Object.keys(person));
+}
+
+// b) Object.values()
+
+// Returns an array of an object’s values.
+
+function objectValues() {
+  let person = { name: "Alice", age: 25 };
+  document.write(Object.values(person));
+}
+
+// c) Object.entries()
+
+// Returns an array of an object’s key-value pairs as arrays.
+
+function objectEntries() {
+  let person = { name: "Alice", age: 25 };
+  document.write(Object.entries(person));
+}
+
+//Practice for Objects :-
+
+// Create an object representing a car with properties like brand, model, and speed. Add a method to accelerate the car.
+
+function objectPractice() {
+  var car = {
+    brand: "Honda",
+    model: "2024",
+    speed: 0,
+    accelerateCar: function () {
+      document.write(
+        `The car ${this.brand} of ${
+          this.model
+        } model is going with the speed of ${(this.speed += 10)}`
+      );
+    },
+  };
+
+  car.accelerateCar();
+}
