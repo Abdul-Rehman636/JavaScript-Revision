@@ -1003,3 +1003,129 @@ function objectPractice() {
 
   car.accelerateCar();
 }
+
+//Day 6 :-
+
+//1. Template Literals :-
+
+//Template literals are a way to create strings in JavaScript that allow for embedded expressions and multi-line strings. They are enclosed in backticks (`) instead of single or double quotes.
+
+// Key Features :-
+
+// 1. Embedded Expressions:
+
+// You can embed variables or expressions directly into the string using ${}.
+
+// 2. Multi-line Strings:
+
+// You can write strings that span multiple lines without using \n.
+
+//Embedded Expressions Example :-
+
+function embeddedExpression() {
+  var name = "Alex";
+
+  var age = 27;
+
+  // Without template literals
+
+  // let message = "My name is " + name + " and I am " + age + " years old.";
+
+  // With template literals
+
+  let message = `My name is ${name} and I am ${age} years old.`;
+
+  document.write(message);
+}
+
+//Multi-Line Strings Example :-
+
+function multiLine() {
+  let multiLine = `
+    This is a multi-line string.
+    It makes writing HTML or long text much easier.
+  `;
+
+  document.write(multiLine);
+}
+
+// 2. Destructuring
+
+// Destructuring allows you to extract values from arrays or objects into distinct variables. It’s a concise way to unpack values.
+
+// a) Array Destructuring
+
+// Extract values from arrays into variables.
+
+function arrayDestruct() {
+  let numbers = [1, 2, 3];
+
+  // Without destructuring
+  // let a = numbers[0];
+  // let b = numbers[1];
+  // let c = numbers[2];
+
+  // With destructuring
+  let [a, b, c] = numbers;
+
+  document.write(a, b, c); // Output: 1 2 3
+}
+
+// :- Skipping Elements
+
+// You can skip elements by using commas.
+
+function skipElements() {
+  let [a, , c] = [1, 2, 3];
+
+  document.write(a, c);
+}
+
+// :- Default Values
+
+// You can provide default values in case the value is undefined.
+
+function arrayDefaultValues() {
+  let [a = 10, b = 20] = [1];
+
+  document.write(a, ",", b); // Output: 1 20
+}
+
+//b) Object Destructuring
+
+// Extract values from objects into variables.
+
+function objectDestruct() {
+  let person = { name: "Alice", age: 25 };
+
+  // Without destructuring
+  // let name = person.name;
+  // let age = person.age;
+
+  // With destructuring
+  let { name, age } = person;
+
+  document.write(name, age); // Output: Alice 25
+}
+
+// :- Renaming Variables
+
+// You can rename variables while destructuring.
+
+function renameVariable() {
+  let person = { name: "Alice", age: 25 };
+
+  let { name: fullName, age: years } = person;
+
+  document.write(fullName, years); // Output: Alice 25
+}
+
+// :- Default Values
+
+// You can provide default values in case the property is undefined.
+
+function objectDefaultValues() {
+  let { name = "Unknown", age = 18 } = { name: "Alice" };
+
+  document.write(name, age); // Output: Alice 18
+}
