@@ -149,7 +149,7 @@ function arithmeticOperators() {
 
   var c = 2;
 
-  c++; //Now c value will be 3 because c++ means c + 1, this is a short method to add a number in variable, there are two ways to write this first one is (c++) it is called Post Increament and second one is (++c) it is called Pre Increment. Both ways are valid,
+  c++; //Now c value will be 3 because c++ means c + 1, this is a short method to add a number in variable, there are two ways to write this, first one is (c++) it is called Post Increament and second one is (++c) it is called Pre Increment. Both ways are valid,
 
   document.write("c = ", c, "<br>");
 
@@ -286,7 +286,7 @@ function conditionalStatement() {
 //6. Ternary Operators
 
 function ternaryOperator() {
-  var a = 26;
+  var a = prompt("Enter your age");
 
   var result = a >= 18 ? "You are Adult" : "You are not Adult";
   document.write(result);
@@ -777,7 +777,7 @@ function includes() {
 function spread() {
   let fruits = ["apple", "mango", "banana", "grapes"];
 
-  document.write(...fruits.join(" "));
+  document.write(...fruits.join("<br>"));
 }
 
 //Day 5 :-
@@ -1125,7 +1125,98 @@ function renameVariable() {
 // You can provide default values in case the property is undefined.
 
 function objectDefaultValues() {
-  let { name = "Unknown", age = 18 } = { name: "Alice" };
+  let person = { name: "Alice" };
+
+  let { name = "Unknown", age = 18 } = person;
 
   document.write(name, age); // Output: Alice 18
 }
+
+// Day 8 :-
+
+//Async/Await, Promises, Callback.
+
+//Sync in Javascript :-
+
+//Synchronous :-
+
+// Synchronous means the code runs in a particular sequence of instructions given in the program.
+// Each instruction waits for the previous instruction to complete its execution.
+
+// Example of Synchronous :-
+
+function synchronous() {
+  console.log("One");
+  console.log("Two");
+  console.log("Three");
+}
+
+//Now here the code will execute itself in a sequence, like 2nd console will wait for first console to complete itself, then the 2nd will run and then the 3rd will run after 2nd completion.
+
+//Asynchronous :-
+
+// Due to synchronous programming, sometimes imp instructions get
+// blocked due to some previous instructions, which causes a delay in the UI.
+// Asynchronous code execution allows to execute next instructions
+// immediately and doesn't block the flow.
+
+//Example of Asynchronous :-
+
+//=> SetTimeout function :- It is a pre built javascript function which takes specific time which we decide and then it runs code.
+
+//=> SetTimeout Example :-
+
+function asynchronous() {
+  console.log("One");
+  console.log("Two");
+  setTimeout(() => {
+    console.log("Three");
+  }, 2000);
+  console.log("Four");
+  console.log("Five");
+}
+
+//So now this code will work like the first, second statement will work usually but will the 4th, 5th statement will wait for the third one to run itself , the answer is no.. because in code if you use setTimeout then that will take the exact time which you decided but the remaining code will automatically run itself without waiting for the previous code execution, it is called Asynchronous.
+
+// Callback in Javascript :-
+
+// A callback in a function passed as an argument to another function.
+
+// Example of Callback :-
+
+function callback() {
+  function sum(a, b) {
+    console.log(a + b);
+  }
+
+  function calculate(a, b, sunCallback) {
+    sunCallback(a, b);
+  }
+
+  calculate(3, 5, sum);
+}
+
+//=> We should not pass our callback functions like calculate(3, 5, sum()).
+
+//=> We have 2 options to pass callbacks functions :-
+
+// 1. We can create function and then pass it as an argument.
+
+// 2. Or we can create arrow function and can do some action there.
+//  calculate(3, 5, (a, b) => {
+//    console.log(a + b);
+//  })
+
+//Both methods are valid.
+
+// => We can also use Callback in Asynchronous Programming.
+
+// Example of Asynchrous Callback :-
+
+// function print() {
+//   console.log("Hello");
+// }
+
+// setTimeout(print, 2000);
+
+// So here now the callback function can also work in Asynchronous Programming.
